@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" name="Default" comment="" />
     <ignored path="www.extra.dev.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" time="1378903955810" ignored="false" />
+    <file path="/Dummy.txt" changelist="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" time="1378912803202" ignored="false" />
     <file path="$PROJECT_DIR$/../www.belezaideal.new/README.md" changelist="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" time="1376329441229" ignored="false" />
     <file path="$PROJECT_DIR$/../www.belezaideal.new/src/LuzPropria/PainelBundle/Resources/views/Empresa/index.html.twig" changelist="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" time="1376329474546" ignored="false" />
     <file path="/index.html.twig" changelist="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" time="1376329912134" ignored="false" />
@@ -128,7 +126,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,20 +194,21 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig" serverName="Extra" serverId="6a949642-a7e1-4670-9414-0db8106edda0" promptOnLocalOverwrite="false">
     <servers>
@@ -326,9 +324,8 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925257" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925257" sideWeight="0.6730769" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28930414" sideWeight="0.6730769" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2931701" sideWeight="0.6730769" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -339,6 +336,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -405,23 +403,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vendor/luzpropria/LuzPropria/Produtos/Classes/Orders.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="6" selection-start="270" selection-end="270" vertical-scroll-proportion="-0.22189349">
-          <folding />
-        </state>
+        <state line="12" column="6" selection-start="270" selection-end="270" vertical-scroll-proportion="-0.22189349" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/Traits/InformationTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="43" selection-start="289" selection-end="289" vertical-scroll-proportion="0.22189349">
-          <folding />
-        </state>
+        <state line="14" column="43" selection-start="289" selection-end="289" vertical-scroll-proportion="0.22189349" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Utils/ArrayCollection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="20" selection-start="165" selection-end="175" vertical-scroll-proportion="0.088757396">
-          <folding />
-        </state>
+        <state line="8" column="20" selection-start="165" selection-end="175" vertical-scroll-proportion="0.088757396" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/luzpropria/teste.php">
