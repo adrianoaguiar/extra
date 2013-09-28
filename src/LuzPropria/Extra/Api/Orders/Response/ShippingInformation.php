@@ -8,6 +8,7 @@
 
 namespace LuzPropria\Extra\Api\Orders\Response;
 
+use LuzPropria\Extra\Api\Orders\Exception\FormatDateInvalidException;
 use LuzPropria\Extra\Api\Orders\Response\Traits\InformationTrait;
 
 /**
@@ -112,11 +113,25 @@ class ShippingInformation
     }
 
     /**
-     * @param \DateTime $scheduledDate
+     * @param $scheduledDate
+     * @throws \LuzPropria\Extra\Api\Orders\Exception\FormatDateInvalidException
+     *
+     * Date Format "Y-m-d" or "d/m/Y"
      */
     public function setScheduledDate($scheduledDate)
     {
-        $this->scheduledDate = $scheduledDate;
+        if($scheduledDate instanceof \DateTime)
+            $this->scheduledDate = $scheduledDate;
+        else {
+            $date = \DateTime::createFromFormat("Y-m-d", $scheduledDate);
+            if(null === $date)
+                $date = \DateTime::createFromFormat("d/m/Y", $scheduledDate);
+            if(null === $date)
+                throw new FormatDateInvalidException('date format invalid');
+
+            $this->scheduledDate = $date;
+        }
+
     }
 
     /**

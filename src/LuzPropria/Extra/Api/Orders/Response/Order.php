@@ -9,6 +9,8 @@
 namespace LuzPropria\Extra\Api\Orders\Response;
 
 
+use LuzPropria\Extra\Api\Orders\Exception\FormatDateInvalidException;
+use LuzPropria\Extra\Api\Orders\Exception\InvalidDateException;
 use LuzPropria\Extra\Utils\ArrayCollection;
 
 /**
@@ -236,13 +238,12 @@ class Order {
     /**
      * @param \LuzPropria\Extra\Utils\ArrayCollection $orderItems
      */
-    public function setOrderItems($orderItems)
+    public function setOrderItems(ArrayCollection $orderItems)
     {
-        if($orderItems instanceof ArrayCollection) {
-            $this->orderItems = $orderItems;
-        }
-        else {
-            $this->orderItems->add($orderItems);
+        foreach($orderItems as $item) {
+            if($item instanceof OrderItem) {
+                $this->addOrderItem($item);
+            }
         }
     }
 
@@ -252,6 +253,14 @@ class Order {
     public function getOrderItems()
     {
         return $this->orderItems;
+    }
+
+    /**
+     * @param OrderItem $item
+     */
+    public function addOrderItem(OrderItem $item)
+    {
+        $this->orderItems->add($item);
     }
 
     /**
@@ -272,10 +281,25 @@ class Order {
 
     /**
      * @param \DateTime $purchaseDate
+     * @throws \LuzPropria\Extra\Api\Orders\Exception\FormatDateInvalidException
+     *
+     *
+     *  Date Format "Y-m-d" or "d/m/Y"
      */
     public function setPurchaseDate($purchaseDate)
     {
-        $this->purchaseDate = $purchaseDate;
+        if($purchaseDate instanceof \DateTime)
+            $this->purchaseDate = $purchaseDate;
+        else {
+            $date = \DateTime::createFromFormat("Y-m-d", $purchaseDate);
+            if(null === $date)
+                $date = \DateTime::createFromFormat("d/m/Y", $purchaseDate);
+            if(null === $date)
+                throw new FormatDateInvalidException('date format invalid');
+
+            $this->purchaseDate = $date;
+        }
+
     }
 
     /**
@@ -291,7 +315,7 @@ class Order {
      */
     public function setTotalAmount($totalAmount)
     {
-        $this->totalAmount = $totalAmount;
+        $this->totalAmount = (double)$totalAmount;
     }
 
     /**
@@ -304,10 +328,23 @@ class Order {
 
     /**
      * @param \DateTime $approvedDate
+     * @throws \LuzPropria\Extra\Api\Orders\Exception\FormatDateInvalidException
+     *
+     * Date Format "Y-m-d" or "d/m/Y"
      */
     public function setApprovedDate($approvedDate)
     {
-        $this->approvedDate = $approvedDate;
+        if($approvedDate instanceof \DateTime)
+            $this->approvedDate = $approvedDate;
+        else {
+            $date = \DateTime::createFromFormat("Y-m-d", $approvedDate);
+            if(null === $date)
+                $date = \DateTime::createFromFormat("d/m/Y", $approvedDate);
+            if(null === $date)
+                throw new FormatDateInvalidException('date format invalid');
+            
+            $this->approvedDate = $date;
+        }
     }
 
     /**
@@ -321,9 +358,14 @@ class Order {
     /**
      * @param \LuzPropria\Extra\Utils\ArrayCollection $billingInformations
      */
-    public function setBillingInformations($billingInformations)
+    public function setBillingInformations(ArrayCollection $billingInformations)
     {
-        $this->billingInformations = $billingInformations;
+        foreach($billingInformations as $item)
+        {
+            if($item instanceof BillingInformation) {
+                $this->addBillingInformation($item);
+            }
+        }
     }
 
     /**
@@ -332,6 +374,14 @@ class Order {
     public function getBillingInformations()
     {
         return $this->billingInformations;
+    }
+
+    /**
+     * @param BillingInformation $item
+     */
+    public function addBillingInformation(BillingInformation $item)
+    {
+        $this->billingInformations->add($item);
     }
 
     /**
@@ -465,9 +515,14 @@ class Order {
     /**
      * @param \LuzPropria\Extra\Utils\ArrayCollection $shippingInformationsList
      */
-    public function setShippingInformationsList($shippingInformationsList)
+    public function setShippingInformationsList(ArrayCollection $shippingInformationsList)
     {
-        $this->shippingInformationsList = $shippingInformationsList;
+        foreach($shippingInformationsList as $item)
+        {
+            if($item instanceof ShippingInformation) {
+                $this->addShippingInformations($item);
+            }
+        }
     }
 
     /**
@@ -479,11 +534,25 @@ class Order {
     }
 
     /**
+     * @param ShippingInformation $item
+     */
+    public function addShippingInformations(ShippingInformation $item)
+    {
+        $this->shippingInformationsList->add($item);
+    }
+
+    /**
      * @param \LuzPropria\Extra\Utils\ArrayCollection $trackingList
      */
-    public function setTrackingList($trackingList)
+    public function setTrackingList(ArrayCollection $trackingList)
     {
-        $this->trackingList = $trackingList;
+        foreach($trackingList as $item)
+        {
+            if($item instanceof Tracking)
+            {
+                $this->addTracking($item);
+            }
+        }
     }
 
     /**
@@ -493,5 +562,14 @@ class Order {
     {
         return $this->trackingList;
     }
+
+    /**
+     * @param Tracking $item
+     */
+    public function addTracking(Tracking $item)
+    {
+        $this->trackingList->add($item);
+    }
+
 
 }

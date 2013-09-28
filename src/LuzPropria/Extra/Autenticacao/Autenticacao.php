@@ -16,6 +16,19 @@ namespace LuzPropria\Extra\Autenticacao;
  */
 class Autenticacao {
 
+
+    /**
+     * Ambiente de Desenvolvimento "Sandbox"
+     *
+     */
+    const ambiente_sandbox   =   'http://sandbox.extra.com.br/api/v1';
+
+    /**
+     * Ambiente de Produção
+     *
+     */
+    const ambiente_producao  =   'http://api.extra.com.br/api/v1';
+
     /**
      *  Application Token
      *
@@ -41,7 +54,7 @@ class Autenticacao {
     /**
      *  A Sandbox é um ambiente feito para você executar seus testes antes de colocar sua Aplicação em Produção.
      *
-     * @var mixed
+     * @var bool
      * @access private
      */
     private $sandbox;
@@ -49,19 +62,31 @@ class Autenticacao {
     /**
      * Iniciar autenticação
      *
-     * @param bool $sandbox
-     * @inheritdoc sandbox (false = produção,true = desenvolvimento)
+     * @param null $auth
+     * @param null $app
+     * @param string $sandbox
      */
-    public function __construct($sandbox = false)
+    public function __construct($auth = null, $app = null, $sandbox = 'producao')
     {
-        $this->sandbox  =   $sandbox;
+        if( !is_null($auth) ) {
+            $this->setAuthToken($auth);
+        }
+
+        if( !is_null($app) ) {
+            $this->setAppToken($app);
+        }
+
+        $this->setSandbox($sandbox);
     }
+
     /**
-     * @param mixed $app_token
+     * @param $app_token
+     * @return $this
      */
     public function setAppToken($app_token)
     {
         $this->app_token = $app_token;
+        return $this;
     }
 
     /**
@@ -73,11 +98,13 @@ class Autenticacao {
     }
 
     /**
-     * @param mixed $auth_token
+     * @param $auth_token
+     * @return $this
      */
     public function setAuthToken($auth_token)
     {
         $this->auth_token = $auth_token;
+        return $this;
     }
 
     /**
@@ -89,20 +116,36 @@ class Autenticacao {
     }
 
     /**
-     * @param mixed $sandbox
+     * @param $sandbox
+     * @return $this
      */
     public function setSandbox($sandbox)
     {
-        $this->sandbox = $sandbox;
+        $this->sandbox = (is_bool($sandbox) && $sandbox === true) || $sandbox === 'sandbox' ? true : false;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return bool
      */
     public function getSandbox()
     {
         return $this->sandbox;
     }
 
+    /**
+     * @return bool
+     */
+    public function isSandBox()
+    {
+        return $this->getSandbox();
+    }
 
+    /**
+     * @return string
+     */
+    public function getEnvironment()
+    {
+        return $this->isSandBox() === true ? self::ambiente_sandbox : self::ambiente_producao;
+    }
 }

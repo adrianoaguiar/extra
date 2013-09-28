@@ -7,9 +7,17 @@
 # Order.php
 
 namespace LuzPropria\Extra\Api\Orders;
+use LuzPropria\Extra\Utils\Interfaces\Method;
 
 
-class Order {
+/**
+ * Recupera detalhes do pedido informado.
+ *
+ *
+ * Class Order
+ * @package LuzPropria\Extra\Api\Orders
+ */
+class Order implements Method {
 
     /**
      * ID do pedido
@@ -32,5 +40,15 @@ class Order {
     public function getOrderId()
     {
         return $this->orderId;
+    }
+
+    /**
+     * Definir o metodo de envio 'GET'|'POST'|'PUT'
+     *
+     * @return string
+     */
+    public function method()
+    {
+        return 'GET'; // /orders/{orderId}/
     }
 }

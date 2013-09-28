@@ -9,6 +9,7 @@
 namespace LuzPropria\Extra\Api\Orders;
 
 
+use LuzPropria\Extra\Utils\ArrayCollection;
 use LuzPropria\Extra\Utils\Interfaces\itemCancelationRequestInterface;
 
 class ItemCancelationRequest implements itemCancelationRequestInterface {
@@ -23,21 +24,18 @@ class ItemCancelationRequest implements itemCancelationRequestInterface {
      */
     private $reason;
 
+    public function __construct()
+    {
+        $this->orderItemIdList = new ArrayCollection();
+    }
 
     /**
-     * @param array $orderItemIdList
+     * @param ArrayCollection $orderItemIdList
+     * @return mixed
      */
-    public function setOrderItemIdList($orderItemIdList)
+    public function setOrderItemIdList(ArrayCollection $orderItemIdList)
     {
-        if(is_array($orderItemIdList) && is_array($this->orderItemIdList)){
-            $this->orderItemIdList  =   array_merge($this->orderItemIdList, $orderItemIdList);
-        }
-        else if (is_array($orderItemIdList)) {
-            $this->orderItemIdList  =   $orderItemIdList;
-        }
-        else {
-            $this->orderItemIdList[]=   $orderItemIdList;
-        }
+        $this->orderItemIdList = $orderItemIdList;
     }
 
     /**
@@ -46,6 +44,11 @@ class ItemCancelationRequest implements itemCancelationRequestInterface {
     public function getOrderItemIdList()
     {
         return $this->orderItemIdList;
+    }
+
+    public function addOrderItemId($item)
+    {
+        $this->orderItemIdList->add($item);
     }
 
     /**
