@@ -13,26 +13,34 @@ use Symfony\Component\HttpFoundation\Reques;
 use Symfony\Component\HttpFoundation\Response;
 use LuzPropria\Extra\Autenticacao\Autenticacao;
 use LuzPropria\Extra\Enviar\Extra;
-
-$response = new Response(null, 501, array('Content-Type' => 'text/plain'));
+//'Content-type: application/json' text/plain
+//$response = new Response(null, 501, array('Content-Type' => 'application/json'));
+$response = new Response(null, 501);
 
 
 $auth = new Autenticacao();
-$auth->setAuthToken('gliMhFhTgHB');
-$auth->setAppToken('lJW5BcHRGZkiDbNi'); // BaGQxlRcHJGduqCz 0gliMhFhTgHB
+$auth->setAuthToken('0gliMhFhTgHB');
+$auth->setAppToken('lJW5BcHRGZkiDbNi');
 $auth->setSandbox('sandbox');
 
 $extra = new Extra($auth);
 
+// Categorias
 $categorias_lista = new \LuzPropria\Extra\Api\Categorie\Categories();
-$categorias_lista->setOffset(0)->setLimit(10);
+$categorias_lista->setOffset(0)->setLimit(50);
 
+$categoria_detalhe = new \LuzPropria\Extra\Api\Categorie\CategoriesLevelId();
+$categoria_detalhe->setLevelId(80056);
+
+
+$seller_items = new \LuzPropria\Extra\Api\Seller\SellerGetItems();
+$seller_items->setOffset(0)->setLimit(100);
 
 try {
 
     $retorno = $extra->send($categorias_lista);
-
-    $response->setContent($retorno);
+    var_dump($retorno);
+    //$response->setContent();
     $response->setStatusCode(200);
 
 } catch (\Exception $e ) {

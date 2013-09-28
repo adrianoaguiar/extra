@@ -54,7 +54,12 @@ class Extra {
     }
 
     private $class_reference = array(
+        // Categorias
         'LuzPropria\Extra\Api\Categorie\Categories' => 'LuzPropria\Extra\Enviar\Categorie\Categories',
+        'LuzPropria\Extra\Api\Categorie\CategoriesLevelId' => 'LuzPropria\Extra\Enviar\Categorie\CategoriesLevelId',
+
+        // Seller
+        'LuzPropria\Extra\Api\Seller\SellerGetItems'=> 'LuzPropria\Extra\Enviar\Seller\SellerGetItems'
     );
 
     /**
@@ -68,7 +73,9 @@ class Extra {
     {
         $class_string = get_class($send);
         if(array_key_exists($class_string, $this->class_reference)) {
-            return new $this->class_reference[$class_string]($send);
+            $class = new $this->class_reference[$class_string]($send);
+            if($class instanceof ClassSendInterface)
+                return $class;
         }
         throw new ResponseClassException('class does not exist');
     }

@@ -3,38 +3,41 @@
  *  PhpStorm
  *  Project: www.extra.dev
  *  (c) Rogério Adriano da Silva <rogerioadris.silva@gmail.com>
- *  Create: 28/09/13 14:10
+ *  Create: 28/09/13 16:29
  */
-# Categories.php
+# SellerGetItems.php
 
 
-namespace LuzPropria\Extra\Enviar\Categorie;
+namespace LuzPropria\Extra\Enviar\Seller;
+
 
 use Guzzle\Http\Client;
-use LuzPropria\Extra\Api\Categorie\Response\Category;
+use Guzzle\Http\Message\Response;
 use LuzPropria\Extra\Autenticacao\Autenticacao;
 use LuzPropria\Extra\Enviar\Exception\ExceptionAutenticacao;
 use LuzPropria\Extra\Enviar\Exception\ResultInvalidException;
 use LuzPropria\Extra\Enviar\Interfaces\ClassSendInterface;
-use LuzPropria\Extra\Utils\ArrayCollection;
 use LuzPropria\Extra\Utils\Interfaces\Method;
+use LuzPropria\Extra\Api\Seller\Response\SellerItem;
+use LuzPropria\Extra\Utils\ArrayCollection;
 
-class Categories implements ClassSendInterface {
+class SellerGetItems implements ClassSendInterface {
 
     /**
-     * @var \LuzPropria\Extra\Api\Categorie\Categories
+     * @var \LuzPropria\Extra\Api\Seller\SellerGetItems
      */
     private $_class;
+
+    /**
+     * @var Autenticacao
+     */
+    private $_auth;
 
     /**
      * @var Response
      */
     private $_response;
 
-    /**
-     * @var Autenticacao
-     */
-    private $_auth;
     /**
      * Classe inicial
      *
@@ -44,17 +47,6 @@ class Categories implements ClassSendInterface {
     {
         $this->_class = $class;
     }
-
-    /**
-     * Verificar os campos obrigatorios
-     *
-     * @return mixed
-     */
-    public function isValid()
-    {
-        return is_int($this->_class->getLimit()) && is_int($this->_class->getOffset());
-    }
-
 
     /**
      * @param Autenticacao $auth
@@ -77,10 +69,18 @@ class Categories implements ClassSendInterface {
         return $this->_auth;
     }
 
-
+    /**
+     * Verificar os campos obrigatorios
+     *
+     * @return mixed
+     */
+    public function isValid()
+    {
+        return is_int($this->_class->getLimit()) && is_int($this->_class->getOffset());
+    }
 
     /**
-     * @return void
+     * @return mixed
      */
     public function send()
     {
@@ -100,7 +100,7 @@ class Categories implements ClassSendInterface {
             ));
 
             /** @var \Guzzle\Http\Message\Request $request */
-            $request = $client->get('categories');
+            $request = $client->get('sellerItems');
             $this->_response = $request->send();
         }
     }
@@ -111,16 +111,18 @@ class Categories implements ClassSendInterface {
      */
     public function result()
     {
-        //{"levelId":80056,"levelName":"Informática","levelFatherId":0}
         $array_collection = json_decode($this->_response->getBody(), true);
         if(!is_array($array_collection)) {
             throw new ResultInvalidException('invalid return');
         }
         return new ArrayCollection(array_map(function($v){
-            $obj = new Category();
-            $obj->setLevelId($v['levelId']);
-            $obj->setLevelName($v['levelName']);
-            $obj->setLevelFatherId($v['levelFatherId']);
+            $obj = new SellerItem();
+            $obj->setSkuOrigin($v['skuOrigin']);
+            $obj->setSkuId($v['skuId']);
+            $obj->setDefaultPrice($v['defaultPrice']);
+            $obj->setSalePrice($v['salePrice']);
+            $obj->setAvailableQuantity($v['availableQuantity']);
+            $obj->setTotalQuantity($v['totalQuantity']);
             return $obj;
         }, $array_collection));
     }

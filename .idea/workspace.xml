@@ -2,90 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/Response/Bank.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/Response/CCPaymentInfos.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Categorie/Response/CategorYuda.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Categorie/Categories.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Categorie/Categories.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Categorie/CategoriesLevelId.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Categorie/Response/Category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Interfaces/ClassSendInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/EditTicket.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Exception/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Exception/FormatDateInvalidException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Product/Response/Image.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Exception/InvalidDateException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Load/Response/LoadResponse.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Load/LoadsProducts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Load/LoadsProductsImporterInfoId.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Load/LoadsProductsImporterInfoIdSkuOrigin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Product/Response/Media.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Utils/Interfaces/Method.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/NewTicket.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/NewTicketLog.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/Response/OrderInfos.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderOrderItensStatusCanceled.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderStatusApproved.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderStatusCanceled.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderStatusDelivered.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderStatusNew.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderStatusPartiallyDelivered.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderStatusSent.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderStatusSentPatially.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderStatusSetCanceled.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Traits/OrderStatusTrait.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Exception/ParametersInvalidException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/PriceUpdate.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Product/Product.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Product/Response/Product.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Load/Response/ProductLoadResponse.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Product/ProductSku.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Load/ProductUdas.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Product/Response/ProductUdas.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Product/Products.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/Response/RefundInfo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/SellerGetItem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/SellerGetItems.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/SellerItem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/Response/SellerItem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/SellerItems.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/SellerItemsPrices.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/SellerItemsSkuOrigin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/SellerItemsStatusSelling.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/SellerItemsStock.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Seller/StockUpdate.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/Response/Ticket.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/Response/TicketLogs.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/Tickets.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/TicketsGet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/TicketsIdTicket.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/TicketsIdTicketPut.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/TicketsIdTicketTicketLogsGet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/TicketsIdTicketTicketLogsIdTicketLog.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/TicketsIdTicketTicketLogsPost.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Product/Response/Video.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/phpunit.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Products/Response/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Products/Response/Media.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Products/Response/Product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Products/Response/ProductUdas.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Products/Response/Video.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderItem.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/OrderOrderItens.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Products/Product.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Load/Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Autenticacao/Autenticacao.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Autenticacao/Autenticacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Exception/ExceptionAutenticacao.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Exception/ExceptionAutenticacao.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Categorie/CategoriesLevelId.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Exception/ResultInvalidException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Seller/SellerGetItems.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Categorie/Categories.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Categorie/Categories.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Extra.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Extra.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/Traits/InformationTrait.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/Traits/InformationTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/ItemCancelationRequest.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/ItemCancelationRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Order.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/Order.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/OrderItem.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/OrderItem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/ShippingInformation.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/ShippingInformation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/Tracking.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Response/Tracking.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LuzPropria/Extra/Utils/Interfaces/itemCancelationRequestInterface.php" afterPath="$PROJECT_DIR$/src/LuzPropria/Extra/Utils/Interfaces/itemCancelationRequestInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="www.extra.dev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,10 +38,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="-0.7063197" vertical-offset="650" max-vertical-offset="1242">
+            <state line="15" column="45" selection-start="403" selection-end="403" vertical-scroll-proportion="5.4074073" vertical-offset="416" max-vertical-offset="1386">
               <folding>
                 <element signature="e#6#125#0" expanded="true" />
                 <element signature="e#183#227#0" expanded="true" />
@@ -128,13 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Extra.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Extra.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Extra.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="30" selection-start="2409" selection-end="2409" vertical-scroll-proportion="-8.592592" vertical-offset="1280" max-vertical-offset="1818">
-              <folding>
-                <element signature="e#178#230#0" expanded="true" />
-              </folding>
+            <state line="95" column="29" selection-start="2725" selection-end="2725" vertical-scroll-proportion="0.9330855" vertical-offset="1010" max-vertical-offset="1836">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,10 +62,8 @@
       <file leaf-file-name="Categories.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Categorie/Categories.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="49" selection-start="1709" selection-end="1709" vertical-scroll-proportion="-10.592592" vertical-offset="1064" max-vertical-offset="1872">
-              <folding>
-                <element signature="e#209#232#0" expanded="true" />
-              </folding>
+            <state line="93" column="22" selection-start="2247" selection-end="2247" vertical-scroll-proportion="0.0" vertical-offset="1674" max-vertical-offset="2376">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,7 +71,7 @@
       <file leaf-file-name="Categories.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Api/Categorie/Categories.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="36" selection-start="843" selection-end="854" vertical-scroll-proportion="-14.592592" vertical-offset="218" max-vertical-offset="756">
+            <state line="40" column="36" selection-start="843" selection-end="854" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="864">
               <folding />
             </state>
           </provider>
@@ -393,15 +311,15 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="options.lastSelected" value="Configurable.PHP.PHPUnit" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/phpunit.xml" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig" serverName="Extra" serverId="6a949642-a7e1-4670-9414-0db8106edda0" promptOnLocalOverwrite="false" />
   <component name="RecentsManager">
@@ -498,27 +416,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/NewTicketLog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="7" selection-start="940" selection-end="940" vertical-scroll-proportion="0.5315985" vertical-offset="776" max-vertical-offset="1314">
-          <folding>
-            <element signature="e#6#143#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="59" column="7" selection-start="940" selection-end="940" vertical-scroll-proportion="0.5315985" vertical-offset="776" max-vertical-offset="1314" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/TicketsIdTicketTicketLogsIdTicketLog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="21" selection-start="1017" selection-end="1017" vertical-scroll-proportion="1.7732342" vertical-offset="0" max-vertical-offset="1350">
-          <folding />
-        </state>
+        <state line="58" column="21" selection-start="1017" selection-end="1017" vertical-scroll-proportion="1.7732342" vertical-offset="0" max-vertical-offset="1350" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Api/Ticket/TicketsIdTicketTicketLogsPost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="633" selection-end="802" vertical-scroll-proportion="0.2639405" vertical-offset="398" max-vertical-offset="2016">
-          <folding>
-            <element signature="e#6#143#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="30" column="0" selection-start="633" selection-end="802" vertical-scroll-proportion="0.2639405" vertical-offset="398" max-vertical-offset="2016" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php">
@@ -530,23 +438,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="46" selection-start="569" selection-end="569" vertical-scroll-proportion="0.464684" vertical-offset="92" max-vertical-offset="648">
-          <folding />
-        </state>
+        <state line="19" column="46" selection-start="569" selection-end="569" vertical-scroll-proportion="0.464684" vertical-offset="92" max-vertical-offset="648" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Exception/ParametersInvalidException.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="52" selection-start="278" selection-end="278" vertical-scroll-proportion="0.267658" vertical-offset="0" max-vertical-offset="538">
-          <folding />
-        </state>
+        <state line="13" column="52" selection-start="278" selection-end="278" vertical-scroll-proportion="0.267658" vertical-offset="0" max-vertical-offset="538" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Utils/Interfaces/Method.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="20" selection-start="325" selection-end="325" vertical-scroll-proportion="0.5018587" vertical-offset="0" max-vertical-offset="538">
-          <folding />
-        </state>
+        <state line="19" column="20" selection-start="325" selection-end="325" vertical-scroll-proportion="0.5018587" vertical-offset="0" max-vertical-offset="538" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Api/Orders/Traits/OrderStatusTrait.php">
@@ -558,7 +460,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Api/Categorie/Categories.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="36" selection-start="843" selection-end="854" vertical-scroll-proportion="-14.592592" vertical-offset="218" max-vertical-offset="756">
+        <state line="40" column="36" selection-start="843" selection-end="854" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="864">
           <folding />
         </state>
       </provider>
@@ -595,29 +497,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Categorie/Categories.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="49" selection-start="1709" selection-end="1709" vertical-scroll-proportion="-10.592592" vertical-offset="1064" max-vertical-offset="1872">
+        <state line="93" column="22" selection-start="2247" selection-end="2247" vertical-scroll-proportion="0.0" vertical-offset="1674" max-vertical-offset="2376">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="45" selection-start="403" selection-end="403" vertical-scroll-proportion="5.4074073" vertical-offset="416" max-vertical-offset="1386">
           <folding>
-            <element signature="e#209#232#0" expanded="true" />
+            <element signature="e#6#125#0" expanded="true" />
+            <element signature="e#183#227#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Extra.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="30" selection-start="2409" selection-end="2409" vertical-scroll-proportion="-8.592592" vertical-offset="1280" max-vertical-offset="1818">
-          <folding>
-            <element signature="e#178#230#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="-0.7063197" vertical-offset="650" max-vertical-offset="1242">
-          <folding>
-            <element signature="e#6#125#0" expanded="true" />
-            <element signature="e#183#227#0" expanded="true" />
-          </folding>
+        <state line="95" column="29" selection-start="2725" selection-end="2725" vertical-scroll-proportion="0.9330855" vertical-offset="1010" max-vertical-offset="1836">
+          <folding />
         </state>
       </provider>
     </entry>

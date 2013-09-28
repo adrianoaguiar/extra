@@ -3,15 +3,17 @@
  *  PhpStorm
  *  Project: www.extra.dev
  *  (c) Rogério Adriano da Silva <rogerioadris.silva@gmail.com>
- *  Create: 28/09/13 14:10
+ *  Create: 28/09/13 17:43
  */
-# Categories.php
+# CategoriesLevelId.php
 
 
 namespace LuzPropria\Extra\Enviar\Categorie;
 
+
 use Guzzle\Http\Client;
 use LuzPropria\Extra\Api\Categorie\Response\Category;
+use LuzPropria\Extra\Api\Categorie\Response\CategorYuda;
 use LuzPropria\Extra\Autenticacao\Autenticacao;
 use LuzPropria\Extra\Enviar\Exception\ExceptionAutenticacao;
 use LuzPropria\Extra\Enviar\Exception\ResultInvalidException;
@@ -19,10 +21,10 @@ use LuzPropria\Extra\Enviar\Interfaces\ClassSendInterface;
 use LuzPropria\Extra\Utils\ArrayCollection;
 use LuzPropria\Extra\Utils\Interfaces\Method;
 
-class Categories implements ClassSendInterface {
+class CategoriesLevelId implements ClassSendInterface {
 
     /**
-     * @var \LuzPropria\Extra\Api\Categorie\Categories
+     * @var \LuzPropria\Extra\Api\Categorie\CategoriesLevelId
      */
     private $_class;
 
@@ -35,6 +37,7 @@ class Categories implements ClassSendInterface {
      * @var Autenticacao
      */
     private $_auth;
+
     /**
      * Classe inicial
      *
@@ -44,17 +47,6 @@ class Categories implements ClassSendInterface {
     {
         $this->_class = $class;
     }
-
-    /**
-     * Verificar os campos obrigatorios
-     *
-     * @return mixed
-     */
-    public function isValid()
-    {
-        return is_int($this->_class->getLimit()) && is_int($this->_class->getOffset());
-    }
-
 
     /**
      * @param Autenticacao $auth
@@ -67,7 +59,7 @@ class Categories implements ClassSendInterface {
 
     /**
      * @return Autenticacao
-     * @throws \LuzPropria\Extra\Enviar\Exception\ExceptionAutenticacao
+     * @throws ExceptionAutenticacao
      */
     public function getAutentication()
     {
@@ -77,10 +69,18 @@ class Categories implements ClassSendInterface {
         return $this->_auth;
     }
 
-
+    /**
+     * Verificar os campos obrigatorios
+     *
+     * @return mixed
+     */
+    public function isValid()
+    {
+        return true;
+    }
 
     /**
-     * @return void
+     * @return mixed
      */
     public function send()
     {
@@ -93,35 +93,34 @@ class Categories implements ClassSendInterface {
                         'nova-auth-token' => $this->getAutentication()->getAuthToken(),
                     ),
                     'query'   => array(
-                        '_offset' => $this->_class->getOffset(),
-                        '_limit'  => $this->_class->getLimit(),
+
                     ),
                 )
             ));
 
             /** @var \Guzzle\Http\Message\Request $request */
-            $request = $client->get('categories');
+            $request = $client->get(sprintf('categories/%s',$this->_class->getLevelId()));
             $this->_response = $request->send();
         }
     }
 
     /**
-     * @return ArrayCollection|mixed
+     * @return mixed|void
      * @throws \LuzPropria\Extra\Enviar\Exception\ResultInvalidException
      */
     public function result()
     {
-        //{"levelId":80056,"levelName":"Informática","levelFatherId":0}
         $array_collection = json_decode($this->_response->getBody(), true);
         if(!is_array($array_collection)) {
             throw new ResultInvalidException('invalid return');
         }
-        return new ArrayCollection(array_map(function($v){
-            $obj = new Category();
-            $obj->setLevelId($v['levelId']);
-            $obj->setLevelName($v['levelName']);
-            $obj->setLevelFatherId($v['levelFatherId']);
-            return $obj;
-        }, $array_collection));
+        $category = new Category();
+        $category->setLevelId($array_collection['levelId']);
+        $category->setLevelName($array_collection['levelName']);
+        $category->setLevelFatherId($array_collection['levelFatherId']);           
+        $category->setUdaList(new ArrayCollection(array_map(function($v){
+
+        }, $array_collection['udaList'])));
+        return $category;
     }
 }
