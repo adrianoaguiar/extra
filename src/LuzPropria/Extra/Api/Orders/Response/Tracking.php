@@ -7,6 +7,7 @@
 # Tracking.php
 
 namespace LuzPropria\Extra\Api\Orders\Response;
+use LuzPropria\Extra\Utils\ArrayCollection;
 
 
 /**
@@ -121,6 +122,55 @@ class Tracking
      * @var string
      */
     private $serieNfe;
+
+    public function __construct()
+    {
+        $this->orderItems = new ArrayCollection();
+    }
+
+    /**
+     * @param string $orderId
+     */
+    public function setOrderId($orderId)
+    {
+        $this->orderId = $orderId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->orderId;
+    }
+
+    /**
+     * @param \LuzPropria\Extra\Utils\ArrayCollection $orderItems
+     */
+    public function setOrderItems(ArrayCollection $orderItems)
+    {
+        foreach($orderItems as $item) {
+            if($item instanceof OrderItem) {
+                $this->addOrderItem($item);
+            }
+        }
+    }
+
+    /**
+     * @return \LuzPropria\Extra\Utils\ArrayCollection
+     */
+    public function getOrderItems()
+    {
+        return $this->orderItems;
+    }
+
+    /**
+     * @param OrderItem $item
+     */
+    public function addOrderItem(OrderItem $item)
+    {
+        $this->orderItems->add($item);
+    }
 
     /**
      * @param string $accessKeyNfe
@@ -248,38 +298,6 @@ class Tracking
     public function getOccurenceDt()
     {
         return $this->occurenceDt;
-    }
-
-    /**
-     * @param string $orderId
-     */
-    public function setOrderId($orderId)
-    {
-        $this->orderId = $orderId;
-    }
-
-    /**
-     * @return string
-     */
-    public function getOrderId()
-    {
-        return $this->orderId;
-    }
-
-    /**
-     * @param array $orderItems
-     */
-    public function setOrderItems($orderItems)
-    {
-        $this->orderItems = $orderItems;
-    }
-
-    /**
-     * @return array
-     */
-    public function getOrderItems()
-    {
-        return $this->orderItems;
     }
 
     /**

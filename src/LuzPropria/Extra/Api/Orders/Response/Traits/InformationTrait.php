@@ -9,7 +9,7 @@
 namespace LuzPropria\Extra\Api\Orders\Response\Traits;
 
 
-class InformationTrait
+trait InformationTrait
 {
     /**
      * Endereço (nome da rua, avenida ... )

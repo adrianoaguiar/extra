@@ -9,6 +9,6 @@
 namespace LuzPropria\Extra\Enviar\Exception;
 
 
-class ExceptionAutenticacao extends \Exception {
+class ExceptionAutenticacao extends Exception {
 
 }

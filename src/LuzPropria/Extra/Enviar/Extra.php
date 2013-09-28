@@ -8,22 +8,15 @@
 
 namespace LuzPropria\Extra\Enviar;
 
+use Guzzle\Service\Exception\ResponseClassException;
 use LuzPropria\Extra\Autenticacao\Autenticacao;
 use LuzPropria\Extra\Enviar\Exception\ExceptionAutenticacao;
+use LuzPropria\Extra\Enviar\Exception\ParametersInvalidException;
+use LuzPropria\Extra\Enviar\Interfaces\ClassSendInterface;
+use LuzPropria\Extra\Utils\Interfaces\Method;
+use Guzzle\Http\Client;
 
 class Extra {
-
-    /**
-     * Ambiente de Desenvolvimento "Sandbox"
-     *
-     */
-    const ambiente_sandbox   =   'http://sandbox.extra.com.br/api/v1';
-
-    /**
-     * Ambiente de Produção
-     *
-     */
-    const ambiente_producao  =   'http://sandbox.extra.com.br/api/v1';
 
     /**
      * @var \LuzPropria\Extra\Autenticacao\Autenticacao
@@ -37,53 +30,70 @@ class Extra {
      */
     public function __construct(Autenticacao $autenticacao = null)
     {
-        $this->autenticacao =   $autenticacao;
-    }
-
-    /**
-     * Opções padroes
-     *
-     * @return array
-     * @throws Exception\ExceptionAutenticacao
-     */
-    public function defaultOptions()
-    {
-        if($this->autenticacao instanceof Autenticacao){
-            return array(
-                'request.options'=> array(
-                    'headers' => array(
-                        'nova-auth-token'=> $this->autenticacao->getAuthToken(),
-                        'nova-app-token'=>  $this->autenticacao->getAppToken()
-                    )
-                )
-            );
-        }
-        else
-            throw new ExceptionAutenticacao('Autenticação não informada', 501);
+        $this->setAutenticacao($autenticacao);
     }
 
     /**
      * @param \LuzPropria\Extra\Autenticacao\Autenticacao $autenticacao
      */
-    public function setAutenticacao($autenticacao)
+    public function setAutenticacao(Autenticacao $autenticacao)
     {
         $this->autenticacao = $autenticacao;
     }
 
     /**
-     * @return \LuzPropria\Extra\Autenticacao\Autenticacao
+     * @return Autenticacao
+     * @throws Exception\ExceptionAutenticacao
      */
     public function getAutenticacao()
     {
+        if(!$this->autenticacao instanceof Autenticacao) {
+            throw new ExceptionAutenticacao('Authentication is not defined');
+        }
         return $this->autenticacao;
+    }
+
+    private $class_reference = array(
+        'LuzPropria\Extra\Api\Categorie\Categories' => 'LuzPropria\Extra\Enviar\Categorie\Categories',
+    );
+
+    /**
+     * Classe envio
+     *
+     * @param Method $send
+     * @return mixed
+     * @throws \Guzzle\Service\Exception\ResponseClassException
+     */
+    private function getClassSend(Method $send)
+    {
+        $class_string = get_class($send);
+        if(array_key_exists($class_string, $this->class_reference)) {
+            return new $this->class_reference[$class_string]($send);
+        }
+        throw new ResponseClassException('class does not exist');
     }
 
     /**
      *
      */
-    public function send()
+    public function send(Method $send)
     {
+        /** @var ClassSendInterface $class */
+        $class = $this->getClassSend($send);
 
+        // Validar parametros padrão
+        if($class->isValid() === false) {
+            throw new ParametersInvalidException('Default parameters not set');
+        }
+
+        // Setar autenticacao
+        $class->setAutentication($this->getAutenticacao());
+
+        // Fazer requisição
+        $class->send();
+
+        // Retorna resultado
+        return $class->result();
     }
 
 

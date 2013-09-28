@@ -7,6 +7,7 @@
 # itemCancelationRequestInterface.php
 
 namespace LuzPropria\Extra\Utils\Interfaces;
+use LuzPropria\Extra\Utils\ArrayCollection;
 
 /**
  * interface itemCancelationRequestInterface
@@ -18,9 +19,10 @@ namespace LuzPropria\Extra\Utils\Interfaces;
 interface itemCancelationRequestInterface {
 
     /**
-     * @param array $orderItemIdList
+     * @param ArrayCollection $orderItemIdList
+     * @return mixed
      */
-    public function setOrderItemIdList($orderItemIdList);
+    public function setOrderItemIdList(ArrayCollection $orderItemIdList);
 
     /**
      * @return array

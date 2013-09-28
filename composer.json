@@ -16,7 +16,8 @@
     "require": {
         "php": ">=5.3.2",
         "ext-curl": "*",
-        "guzzle/guzzle": "~3.7"
+        "guzzle/guzzle": "~3.7",
+        "symfony/http-foundation": "2.4.*@dev"
     },
 
     "autoload": {
