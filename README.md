@@ -31,7 +31,7 @@ $extra = new Extra($auth);
 
 ### Serviços para consulta de categorias ###
 
-1. Recupera uma lista de categorias.
+###### Recupera uma lista de categorias ######
 ```php
 $class = new \LuzPropria\Extra\Api\Categorie\Categories();
 $class->setOffset(0); // Parâmetro utilizado para limitar a quantidade de registros trazidos por página.
