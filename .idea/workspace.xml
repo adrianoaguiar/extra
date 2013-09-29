@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="www.extra.dev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,14 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="38" selection-start="919" selection-end="939" vertical-scroll-proportion="-4.6666665" vertical-offset="450" max-vertical-offset="1512">
-              <folding>
-                <element signature="e#6#125#0" expanded="true" />
-                <element signature="e#183#227#0" expanded="true" />
-              </folding>
+            <state line="7" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.36842105" vertical-offset="0" max-vertical-offset="342">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="0.139823" vertical-offset="65" max-vertical-offset="1314">
+            <state line="14" column="0" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0" vertical-offset="65" max-vertical-offset="1314">
               <folding />
             </state>
           </provider>
@@ -105,9 +102,9 @@
         <option value="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Seller/SellerItemsSkuOrigin.php" />
         <option value="$PROJECT_DIR$/preview.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/src/LuzPropria/Extra/Enviar/Categorie/Categories.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -431,7 +428,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925257" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -570,19 +567,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="38" selection-start="919" selection-end="939" vertical-scroll-proportion="-4.6666665" vertical-offset="450" max-vertical-offset="1512">
-          <folding>
-            <element signature="e#6#125#0" expanded="true" />
-            <element signature="e#183#227#0" expanded="true" />
-          </folding>
+        <state line="14" column="0" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0" vertical-offset="65" max-vertical-offset="1314">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="0.139823" vertical-offset="65" max-vertical-offset="1314">
+        <state line="7" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.36842105" vertical-offset="0" max-vertical-offset="342">
           <folding />
         </state>
       </provider>
