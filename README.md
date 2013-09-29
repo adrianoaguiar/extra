@@ -33,22 +33,43 @@ $extra = new Extra($auth);
 
 ###### Recupera uma lista de categorias ######
 ```php
-$class = new \LuzPropria\Extra\Api\Categorie\Categories();
+use LuzPropria\Extra\Api\Categorie\Categories;
+use LuzPropria\Extra\Api\Categorie\Response\Category;
+use LuzPropria\Extra\Utils\ArrayCollection;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+
+$class = new Categories();
 $class->setOffset(0); // Parâmetro utilizado para limitar a quantidade de registros trazidos por página.
 $class->setLimit(50); // Parâmetro utilizado para limitar a quantidade de registros trazidos pela operação.
 
 try {
-    /** @var \LuzPropria\Extra\Utils\ArrayCollection $retorno */
+    /** @var ArrayCollection $retorno */
     $retorno = $extra->send($class);
 
-} catch (\Exception $e ) {
+} catch (LPException $e ) {
     $e->getMessage();
 }
 
-/** @var \LuzPropria\Extra\Api\Categorie\Response\Category $categoria */
+/** @var Category $categoria */
 foreach($retorno as $categoria) {
     // $categoria
 }
 ```
+###### Recupera detalhes de uma categoria informada. ######
+```php
+use LuzPropria\Extra\Api\Categorie\CategoriesLevelId;
+use LuzPropria\Extra\Api\Categorie\Response\Category;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException
 
-LuzPropria integração com Extra.com.br
+$class = new CategoriesLevelId();
+$class->setLevelId(80056); // Id da categoria
+
+try {
+    /** @var Category $retorno */
+    $retorno = $extra->send($class);
+
+} catch (LPException $e ) {
+    $e->getMessage();
+}
+```
+[`LuzPropria`](http://www.luzpropria.com).
