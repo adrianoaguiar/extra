@@ -3,40 +3,37 @@
  *  PhpStorm
  *  Project: www.extra.dev
  *  (c) Rogério Adriano da Silva <rogerioadris.silva@gmail.com>
- *  Create: 28/09/13 17:43
+ *  Create: 29/09/13 16:35
  */
-# CategoriesLevelId.php
+# SellerGetItem.php
 
 
-namespace LuzPropria\Extra\Enviar\Categorie;
-
+namespace LuzPropria\Extra\Enviar\Seller;
 
 use Guzzle\Http\Client;
-use LuzPropria\Extra\Api\Categorie\Response\Category;
-use LuzPropria\Extra\Api\Categorie\Response\CategorYuda;
+use LuzPropria\Extra\Api\Seller\Response\SellerItem;
 use LuzPropria\Extra\Autenticacao\Autenticacao;
 use LuzPropria\Extra\Enviar\Exception\ExceptionAutenticacao;
 use LuzPropria\Extra\Enviar\Exception\ResultInvalidException;
 use LuzPropria\Extra\Enviar\Interfaces\ClassSendInterface;
-use LuzPropria\Extra\Utils\ArrayCollection;
 use LuzPropria\Extra\Utils\Interfaces\Method;
 
-class CategoriesLevelId implements ClassSendInterface {
+class SellerGetItem implements ClassSendInterface {
 
     /**
-     * @var \LuzPropria\Extra\Api\Categorie\CategoriesLevelId
+     * @var \LuzPropria\Extra\Api\Seller\SellerGetItem
      */
     private $_class;
-
-    /**
-     * @var
-     */
-    private $_response;
 
     /**
      * @var Autenticacao
      */
     private $_auth;
+
+    /**
+     * @var
+     */
+    private $_response;
 
     /**
      * Classe inicial
@@ -59,7 +56,7 @@ class CategoriesLevelId implements ClassSendInterface {
 
     /**
      * @return Autenticacao
-     * @throws ExceptionAutenticacao
+     * @throws \LuzPropria\Extra\Enviar\Exception\ExceptionAutenticacao
      */
     public function getAutentication()
     {
@@ -76,7 +73,7 @@ class CategoriesLevelId implements ClassSendInterface {
      */
     public function isValid()
     {
-        return true;
+        return strlen($this->_class->getSkuId()) >= 1;
     }
 
     /**
@@ -99,7 +96,7 @@ class CategoriesLevelId implements ClassSendInterface {
             ));
 
             /** @var \Guzzle\Http\Message\Request $request */
-            $request = $client->get(sprintf('categories/%s',$this->_class->getLevelId()));
+            $request = $client->get(sprintf('sellerItems/%s',$this->_class->getSkuId()));
             $this->_response = $request->send();
         }
     }
@@ -114,13 +111,17 @@ class CategoriesLevelId implements ClassSendInterface {
         if(!is_array($array_collection)) {
             throw new ResultInvalidException('invalid return');
         }
-        $category = new Category();
-        $category->setLevelId($array_collection['levelId']);
-        $category->setLevelName($array_collection['levelName']);
-        $category->setLevelFatherId($array_collection['levelFatherId']);           
-        $category->setUdaList(new ArrayCollection(array_map(function($v){
 
-        }, $array_collection['udaList'])));
-        return $category;
+        $seller_item = new SellerItem();
+        $seller_item->setSkuOrigin($array_collection['skuOrigin']);
+        $seller_item->getSkuId($array_collection['skuId']);
+        $seller_item->getDefaultPrice($array_collection['defaultPrice']);
+        $seller_item->setSalePrice($array_collection['salePrice']);
+        $seller_item->setAvailableQuantity($array_collection['availableQuantity']);
+        $seller_item->setInstallmentId($array_collection['installmentId']);
+        $seller_item->setTotalQuantity($array_collection['totalQuantity']);
+        $seller_item->setCrossDockingTime($array_collection['crossDockingTime']);
+
+        return $seller_item;
     }
 }

@@ -12,7 +12,6 @@ namespace LuzPropria\Extra\Enviar\Seller;
 
 
 use Guzzle\Http\Client;
-use Guzzle\Http\Message\Response;
 use LuzPropria\Extra\Autenticacao\Autenticacao;
 use LuzPropria\Extra\Enviar\Exception\ExceptionAutenticacao;
 use LuzPropria\Extra\Enviar\Exception\ResultInvalidException;
@@ -34,7 +33,7 @@ class SellerGetItems implements ClassSendInterface {
     private $_auth;
 
     /**
-     * @var Response
+     * @var
      */
     private $_response;
 

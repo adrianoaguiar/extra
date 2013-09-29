@@ -59,7 +59,9 @@ class Extra {
         'LuzPropria\Extra\Api\Categorie\CategoriesLevelId' => 'LuzPropria\Extra\Enviar\Categorie\CategoriesLevelId',
 
         // Seller
-        'LuzPropria\Extra\Api\Seller\SellerGetItems'=> 'LuzPropria\Extra\Enviar\Seller\SellerGetItems'
+        'LuzPropria\Extra\Api\Seller\SellerGetItems'=> 'LuzPropria\Extra\Enviar\Seller\SellerGetItems',
+        'LuzPropria\Extra\Api\Seller\SellerGetItem'=> 'LuzPropria\Extra\Enviar\Seller\SellerGetItem',
+        'LuzPropria\Extra\Api\Seller\SellerItemsSkuOrigin'=> 'LuzPropria\Extra\Enviar\Seller\SellerItemsSkuOrigin',
     );
 
     /**

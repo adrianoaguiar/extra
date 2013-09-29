@@ -32,13 +32,19 @@ $categorias_lista->setOffset(0)->setLimit(50);
 $categoria_detalhe = new \LuzPropria\Extra\Api\Categorie\CategoriesLevelId();
 $categoria_detalhe->setLevelId(80056);
 
-
+// Seller items
 $seller_items = new \LuzPropria\Extra\Api\Seller\SellerGetItems();
 $seller_items->setOffset(0)->setLimit(100);
 
+$seller_item = new \LuzPropria\Extra\Api\Seller\SellerGetItem();
+$seller_item->setSkuId(10);
+
+$seller_items_skuorigin = new \LuzPropria\Extra\Api\Seller\SellerItemsSkuOrigin();
+$seller_items_skuorigin->setSkuOrigin(1);
+
 try {
 
-    $retorno = $extra->send($categorias_lista);
+    $retorno = $extra->send($seller_item);
     var_dump($retorno);
     //$response->setContent();
     $response->setStatusCode(200);
