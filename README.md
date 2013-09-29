@@ -6,13 +6,6 @@ API PHP para integração com extra.com.br
 
 1. Baixe o [`composer.phar`](https://getcomposer.org/composer.phar).
 2. Adiciona o pacote `"luzpropria/extra": "dev-master"` no seu composer.json
-    ```json
-    {
-        "require": {
-            "luzpropria/extra": "dev-master"
-        }
-    }
-    ```
 3. Execute o composer `php composer.phar install` ou `php composer.phar update`
 
 ### Autenticação ###
