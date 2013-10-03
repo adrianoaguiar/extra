@@ -77,8 +77,7 @@ class SellerItems implements ClassSendInterface {
     {
         /** @var \LuzPropria\Extra\Api\Seller\SellerItem $selleritem */
         $selleritem = $this->_class->getSellerItem();
-        return strlen($selleritem->getSkuId()) > 0
-            && strlen($selleritem->getSkuOrigin()) > 0
+        return strlen($selleritem->getSkuOrigin()) > 0
             && is_double($selleritem->getDefaultPrice())
             && is_double($selleritem->getSalePrice())
             && is_int($selleritem->getAvailableQuantity())
@@ -87,7 +86,8 @@ class SellerItems implements ClassSendInterface {
     }
 
     /**
-     * @return mixed
+     * @return mixed|void
+     * @throws \LuzPropria\Extra\Enviar\Exception\NotCreateException
      */
     public function send()
     {

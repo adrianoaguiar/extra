@@ -5,7 +5,7 @@ API PHP para integração com extra.com.br
 * [Serviços para consulta de categorias](#serviços-para-consulta-de-categorias)
     - [Recupera uma lista de categorias](#recupera-uma-lista-de-categorias)
     - [Recupera detalhes de uma categoria informada.](#recupera-detalhes-de-uma-categoria-informada)
-    
+
 * [Serviços de itens vendidos pelo lojista](#serviços-de-itens-vendidos-pelo-lojista)
     - [Recupera itens do Lojista.](#recupera-itens-do-lojista)
     - [Recupera Itens do Lojista que já estão disponíveis para venda.](#recupera-itens-do-lojista-que-já-estão-disponíveis-para-venda)
@@ -20,6 +20,8 @@ API PHP para integração com extra.com.br
 1. Baixe o [`composer.phar`](https://getcomposer.org/composer.phar).
 2. Adiciona o pacote `"luzpropria/extra": "dev-master"` no seu composer.json
 3. Execute o composer `php composer.phar install` ou `php composer.phar update`
+
+* Problemas com codificação utilizar URF-8 `header('Content-Type: text/html; charset=utf-8');`
 
 ### Autenticação ###
 ```php
@@ -42,7 +44,7 @@ $extra = new Extra($auth);
 use LuzPropria\Extra\Api\Categorie\Categories;
 use LuzPropria\Extra\Api\Categorie\Response\Category;
 use LuzPropria\Extra\Utils\ArrayCollection;
-use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException;
 
 $class = new Categories();
 $class->setOffset(0); // Parâmetro utilizado para limitar a quantidade de registros trazidos por página.
@@ -56,9 +58,11 @@ try {
     $e->getMessage();
 }
 
-/** @var Category $categoria */
-foreach($retorno as $categoria) {
-    // $categoria
+if($retorno instanceof ArrayCollection) {
+    /** @var Category $categoria */
+    foreach($retorno as $categoria) {
+        var_dump($categoria);
+    }
 }
 ```
 
@@ -66,7 +70,7 @@ foreach($retorno as $categoria) {
 ```php
 use LuzPropria\Extra\Api\Categorie\CategoriesLevelId;
 use LuzPropria\Extra\Api\Categorie\Response\Category;
-use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException;
 
 $class = new CategoriesLevelId();
 $class->setLevelId(80056); // Id da categoria
@@ -75,6 +79,7 @@ try {
     /** @var Category $retorno */
     $retorno = $extra->send($class);
 
+    var_dump($retorno);
 } catch (LPException $e ) {
     $e->getMessage();
 }
@@ -86,7 +91,7 @@ try {
 use LuzPropria\Extra\Api\Seller\SellerGetItems;
 use LuzPropria\Extra\Api\Seller\Response\SellerItem;
 use LuzPropria\Extra\Utils\ArrayCollection;
-use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException;
 
 $class = new SellerGetItems();
 $class->setOffset(0); // Parâmetro utilizado para limitar a quantidade de registros trazidos por página.
@@ -100,9 +105,11 @@ try {
     $e->getMessage();
 }
 
-/** @var SellerItem $selleritem */
-foreach($retorno as $selleritem) {
-    // $selleritem
+if($retorno instanceof ArrayCollection) {
+    /** @var SellerItem $selleritem */
+    foreach($retorno as $selleritem) {
+        var_dump($selleritem);
+    }
 }
 ```
 
@@ -111,7 +118,7 @@ foreach($retorno as $selleritem) {
 use LuzPropria\Extra\Api\Seller\SellerItemsStatusSelling;
 use LuzPropria\Extra\Api\Seller\Response\SellerItem;
 use LuzPropria\Extra\Utils\ArrayCollection;
-use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException;
 
 $class = new SellerItemsStatusSelling();
 $class->setOffset(0); // Parâmetro utilizado para limitar a quantidade de registros trazidos por página.
@@ -124,10 +131,11 @@ try {
 } catch (LPException $e ) {
     $e->getMessage();
 }
-
-/** @var SellerItem $selleritem */
-foreach($retorno as $selleritem) {
-    // $selleritem
+if($retorno instanceof ArrayCollection) {
+    /** @var SellerItem $selleritem */
+    foreach($retorno as $selleritem) {
+        var_dump($selleritem);
+    }
 }
 ```
 
@@ -135,7 +143,7 @@ foreach($retorno as $selleritem) {
 ```php
 use LuzPropria\Extra\Api\Seller\SellerGetItem;
 use LuzPropria\Extra\Api\Seller\Response\SellerItem;
-use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException;
 
 $class = new SellerGetItem();
 $class->setSkuId(21956411); // SKU ID do produto no Marketplace.
@@ -144,6 +152,7 @@ try {
     /** @var SellerItem $retorno */
     $retorno = $extra->send($class);
 
+    var_dump($retorno);
 } catch (LPException $e ) {
     $e->getMessage();
 }
@@ -153,7 +162,7 @@ try {
 ```php
 use LuzPropria\Extra\Api\Seller\SellerItemsSkuOrigin;
 use LuzPropria\Extra\Api\Seller\Response\SellerItem;
-use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException;
 
 $class = new SellerItemsSkuOrigin();
 $class->setSkuOrigin(848); // SKU ID do produto do Lojista.
@@ -162,6 +171,7 @@ try {
     /** @var SellerItem $retorno */
     $retorno = $extra->send($class);
 
+    var_dump($retorno);
 } catch (LPException $e ) {
     $e->getMessage();
 }
@@ -172,8 +182,9 @@ try {
 use LuzPropria\Extra\Api\Seller\SellerItem;
 use LuzPropria\Extra\Api\Seller\SellerItems;
 use LuzPropria\Extra\Api\Seller\Response\SellerCreate;
-use LuzPropria\Extra\Enviar\Exception\NotUpdateException;
-use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+use LuzPropria\Extra\Enviar\Exception\NotCreateException;
+use LuzPropria\Extra\Enviar\Exception\ParametersInvalidException;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException;
 
 $SellerItem = new SellerItem();
 $SellerItem
@@ -193,11 +204,13 @@ try {
     /** @var SellerCreate $retorno */
     $retorno = $extra->send($class);
 
-
-} catch (NotUpdateException $e ) {
-    $e->getMessage();
+    var_dump($retorno);
+} catch (ParametersInvalidException $e) {
+    echo $e->getMessage(); // Parametros invalido
+} catch (NotCreateException $e) {
+    echo $e->getMessage(); // Retorno erro no envio
 } catch (LPException $e ) {
-    $e->getMessage();
+    echo $e->getMessage(); // Erro não detectado
 }
 ```
 
@@ -208,7 +221,8 @@ Atualiza o preço ´de´ e o preço ´por´ (preço real para venda) do Item do 
 use LuzPropria\Extra\Api\Seller\PriceUpdate;
 use LuzPropria\Extra\Api\Seller\SellerItemsPrices;
 use LuzPropria\Extra\Enviar\Exception\NotUpdateException;
-use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+use LuzPropria\Extra\Enviar\Exception\ParametersInvalidException;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException;
 
 $priceUpdate = new PriceUpdate();
 $priceUpdate
@@ -223,12 +237,17 @@ $class
 
 try {
 
-    $extra->send($class);
+    $resturn = $extra->send($class);
 
+    // Atualizado.
+    var_dump($resturn);
+
+} catch (ParametersInvalidException $e) {
+    echo $e->getMessage(); // Parametros invalido
 } catch (NotUpdateException $e ) {
-    $e->getMessage();
+    echo $e->getMessage(); // Não foi possivel atualizar
 } catch (LPException $e ) {
-    $e->getMessage();
+    echo $e->getMessage(); // Erro não detectado
 }
 ```
 
@@ -238,7 +257,8 @@ try {
 use LuzPropria\Extra\Api\Seller\StockUpdate;
 use LuzPropria\Extra\Api\Seller\SellerItemsStock;
 use LuzPropria\Extra\Enviar\Exception\NotUpdateException;
-use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+use LuzPropria\Extra\Enviar\Exception\ParametersInvalidException;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException;
 
 $stockUpdate = new StockUpdate();
 $stockUpdate
@@ -248,17 +268,22 @@ $stockUpdate
 $class = new SellerItemsStock();
 $class
     ->setSkuId(21956924) // SKU ID do produto no Marketplace.
-    ->setStockUpdate($priceUpdate) // Objeto stockUpdate.
+    ->setStockUpdate($stockUpdate) // Objeto stockUpdate.
 ;
 
 try {
 
-    $extra->send($class);
+    $resturn = $extra->send($class);
 
+    // Atualizado.
+    var_dump($resturn);
+
+} catch (ParametersInvalidException $e) {
+    echo $e->getMessage(); // Parametros invalido
 } catch (NotUpdateException $e ) {
-    $e->getMessage();
+    echo $e->getMessage(); // Não foi possivel atualizar
 } catch (LPException $e ) {
-    $e->getMessage();
+    echo $e->getMessage(); // Erro não detectado
 }
 ```
 

@@ -17,7 +17,8 @@
         "php": ">=5.3.2",
         "ext-curl": "*",
         "guzzle/guzzle": "~3.7",
-        "symfony/http-foundation": "2.4.*@dev"
+        "symfony/http-foundation": "2.4.*@dev",
+        "doctrine/collections": "1.2.*@dev"
     },
 
     "autoload": {
