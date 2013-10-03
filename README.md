@@ -3,8 +3,8 @@ API PHP para integração com extra.com.br
 
 * [Autenticação](#autenticação)
 * [Serviços para consulta de categorias](#serviços-para-consulta-de-categorias)
-    - [Recupera uma lista de categorias](#recupera-uma-lista-de-categorias)</li>
-    - [Recupera detalhes de uma categoria informada.](#recupera-detalhes-de-uma-categoria-informada)</li>
+    - [Recupera uma lista de categorias](#recupera-uma-lista-de-categorias)
+    - [Recupera detalhes de uma categoria informada.](#recupera-detalhes-de-uma-categoria-informada)
 * [Serviços de itens vendidos pelo lojista](#serviços-de-itens-vendidos-pelo-lojista)
 
 ## Instalação Composer ##
