@@ -3,6 +3,6 @@ composer.phar
 composer.lock
 composer-test.lock
 vendor/
-.idea/
+.idea/*
 preview.html
 index.php
