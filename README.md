@@ -48,6 +48,7 @@ foreach($retorno as $categoria) {
     // $categoria
 }
 ```
+
 ###### Recupera detalhes de uma categoria informada. ######
 ```php
 use LuzPropria\Extra\Api\Categorie\CategoriesLevelId;
@@ -65,4 +66,93 @@ try {
     $e->getMessage();
 }
 ```
+### Serviços de itens vendidos pelo lojista ###
+
+###### Recupera itens do Lojista. ######
+```php
+use LuzPropria\Extra\Api\Seller\SellerGetItems;
+use LuzPropria\Extra\Api\Seller\Response\SellerItem;
+use LuzPropria\Extra\Utils\ArrayCollection;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+
+$class = new SellerGetItems();
+$class->setOffset(0); // Parâmetro utilizado para limitar a quantidade de registros trazidos por página.
+$class->setLimit(50); // Parâmetro utilizado para limitar a quantidade de registros trazidos pela operação.
+
+try {
+    /** @var ArrayCollection $retorno */
+    $retorno = $extra->send($class);
+
+} catch (LPException $e ) {
+    $e->getMessage();
+}
+
+/** @var SellerItem $selleritem */
+foreach($retorno as $selleritem) {
+    // $selleritem
+}
+```
+
+###### Recupera Itens do Lojista que já estão disponíveis para venda. ######
+```php
+use LuzPropria\Extra\Api\Seller\SellerItemsStatusSelling;
+use LuzPropria\Extra\Api\Seller\Response\SellerItem;
+use LuzPropria\Extra\Utils\ArrayCollection;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+
+$class = new SellerItemsStatusSelling();
+$class->setOffset(0); // Parâmetro utilizado para limitar a quantidade de registros trazidos por página.
+$class->setLimit(50); // Parâmetro utilizado para limitar a quantidade de registros trazidos pela operação.
+
+try {
+    /** @var ArrayCollection $retorno */
+    $retorno = $extra->send($class);
+
+} catch (LPException $e ) {
+    $e->getMessage();
+}
+
+/** @var SellerItem $selleritem */
+foreach($retorno as $selleritem) {
+    // $selleritem
+}
+```
+
+###### Recupera detalhes do Item do Lojista através do sku informado. ######
+```php
+use LuzPropria\Extra\Api\Seller\SellerGetItem;
+use LuzPropria\Extra\Api\Seller\Response\SellerItem;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+
+$class = new SellerGetItem();
+$class->setSkuId(21956411); // SKU ID do produto no Marketplace.
+
+try {
+    /** @var SellerItem $retorno */
+    $retorno = $extra->send($class);
+
+} catch (LPException $e ) {
+    $e->getMessage();
+}
+```
+
+###### Recupera detalhes do Item do Lojista através do sku do lojista. ######
+```php
+use LuzPropria\Extra\Api\Seller\SellerItemsSkuOrigin;
+use LuzPropria\Extra\Api\Seller\Response\SellerItem;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+
+$class = new SellerItemsSkuOrigin();
+$class->setSkuOrigin(848); // SKU ID do produto do Lojista.
+
+try {
+    /** @var SellerItem $retorno */
+    $retorno = $extra->send($class);
+
+} catch (LPException $e ) {
+    $e->getMessage();
+}
+```
+
+
 [`LuzPropria`](http://www.luzpropria.com).
