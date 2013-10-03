@@ -5,7 +5,15 @@ API PHP para integração com extra.com.br
 * [Serviços para consulta de categorias](#serviços-para-consulta-de-categorias)
     - [Recupera uma lista de categorias](#recupera-uma-lista-de-categorias)
     - [Recupera detalhes de uma categoria informada.](#recupera-detalhes-de-uma-categoria-informada)
+    
 * [Serviços de itens vendidos pelo lojista](#serviços-de-itens-vendidos-pelo-lojista)
+    - [Recupera itens do Lojista.](#recupera-itens-do-lojista)
+    - [Recupera Itens do Lojista que já estão disponíveis para venda.](#recupera-itens-do-lojista-que-já-estão-disponíveis-para-venda)
+    - [Recupera detalhes do Item do Lojista através do sku informado.](#recupera-detalhes-do-item-do-lojista-através-do-sku-informado)
+    - [Recupera detalhes do Item do Lojista através do sku do lojista.](#recupera-detalhes-do-item-do-lojista-através-do-sku-do-lojista)
+    - [Serviço utilizado para registrar Itens do Lojista que já estão disponíveis para venda.](#serviço-utilizado-para-registrar-itens-do-lojista-que-já-estão-disponíveis-para-venda)
+    - [Serviço de atualização de preços.](#serviço-de-atualização-de-preços)
+    - [Atualiza a quantidade disponível para venda do Item do Lojista informado.](#atualiza-a-quantidade-disponível-para-venda-do-item-do-lojista-informado)
 
 ## Instalação Composer ##
 
