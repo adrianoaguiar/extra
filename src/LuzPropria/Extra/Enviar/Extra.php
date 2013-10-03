@@ -54,14 +54,18 @@ class Extra {
     }
 
     private $class_reference = array(
-        // Categorias
-        'LuzPropria\Extra\Api\Categorie\Categories' => 'LuzPropria\Extra\Enviar\Categorie\Categories',
-        'LuzPropria\Extra\Api\Categorie\CategoriesLevelId' => 'LuzPropria\Extra\Enviar\Categorie\CategoriesLevelId',
+        // categories : Serviços para consulta de categorias
+        'LuzPropria\Extra\Api\Categorie\Categories' => 'LuzPropria\Extra\Enviar\Categorie\Categories', // Recupera uma lista de categorias.
+        'LuzPropria\Extra\Api\Categorie\CategoriesLevelId' => 'LuzPropria\Extra\Enviar\Categorie\CategoriesLevelId', //Recupera detalhes de uma categoria informada.
 
-        // Seller
-        'LuzPropria\Extra\Api\Seller\SellerGetItems'=> 'LuzPropria\Extra\Enviar\Seller\SellerGetItems',
-        'LuzPropria\Extra\Api\Seller\SellerGetItem'=> 'LuzPropria\Extra\Enviar\Seller\SellerGetItem',
-        'LuzPropria\Extra\Api\Seller\SellerItemsSkuOrigin'=> 'LuzPropria\Extra\Enviar\Seller\SellerItemsSkuOrigin',
+        // sellerItems : Serviços de itens vendidos pelo lojista
+        'LuzPropria\Extra\Api\Seller\SellerGetItems'=> 'LuzPropria\Extra\Enviar\Seller\SellerGetItems', //Recupera itens do Lojista
+        'LuzPropria\Extra\Api\Seller\SellerGetItem'=> 'LuzPropria\Extra\Enviar\Seller\SellerGetItem', //Recupera detalhes do Item do Lojista através do sku informado.
+        'LuzPropria\Extra\Api\Seller\SellerItemsSkuOrigin'=> 'LuzPropria\Extra\Enviar\Seller\SellerItemsSkuOrigin', //Recupera detalhes do Item do Lojista através do sku do lojista.
+        'LuzPropria\Extra\Api\Seller\SellerItemsStatusSelling' => 'LuzPropria\Extra\Enviar\Seller\SellerItemsStatusSelling', //Recupera Itens do Lojista que já estão disponíveis para venda
+        'LuzPropria\Extra\Api\Seller\SellerItems' => 'LuzPropria\Extra\Enviar\Seller\SellerItems', //Serviço utilizado para registrar (associar) Itens do Lojista que já estão disponíveis para venda no Marketplace.
+        'LuzPropria\Extra\Api\Seller\SellerItemsPrices' => 'LuzPropria\Extra\Enviar\Seller\SellerItemsPrices', //Atualiza o preço ´de´ e o preço ´por´ (preço real para venda) do Item do Lojista informado.
+        'LuzPropria\Extra\Api\Seller\SellerItemsStock' => 'LuzPropria\Extra\Enviar\Seller\SellerItemsStock', //Atualiza a quantidade disponível para venda do Item do Lojista informado.
     );
 
     /**

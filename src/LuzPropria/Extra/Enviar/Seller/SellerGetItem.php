@@ -113,15 +113,7 @@ class SellerGetItem implements ClassSendInterface {
         }
 
         $seller_item = new SellerItem();
-        $seller_item->setSkuOrigin($array_collection['skuOrigin']);
-        $seller_item->getSkuId($array_collection['skuId']);
-        $seller_item->getDefaultPrice($array_collection['defaultPrice']);
-        $seller_item->setSalePrice($array_collection['salePrice']);
-        $seller_item->setAvailableQuantity($array_collection['availableQuantity']);
-        $seller_item->setInstallmentId($array_collection['installmentId']);
-        $seller_item->setTotalQuantity($array_collection['totalQuantity']);
-        $seller_item->setCrossDockingTime($array_collection['crossDockingTime']);
-
+        $seller_item->setArray($array_collection);
         return $seller_item;
     }
 }

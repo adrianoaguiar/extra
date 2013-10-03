@@ -11,6 +11,6 @@
 namespace LuzPropria\Extra\Enviar\Exception;
 
 
-class NotCreateException {
+class NotCreateException extends Exception {
 
 } 

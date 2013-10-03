@@ -116,12 +116,7 @@ class SellerGetItems implements ClassSendInterface {
         }
         return new ArrayCollection(array_map(function($v){
             $obj = new SellerItem();
-            $obj->setSkuOrigin($v['skuOrigin']);
-            $obj->setSkuId($v['skuId']);
-            $obj->setDefaultPrice($v['defaultPrice']);
-            $obj->setSalePrice($v['salePrice']);
-            $obj->setAvailableQuantity($v['availableQuantity']);
-            $obj->setTotalQuantity($v['totalQuantity']);
+            $obj->setArray($v);
             return $obj;
         }, $array_collection));
     }

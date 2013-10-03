@@ -62,4 +62,13 @@ class StockUpdate {
         return $this->totalQuantity;
     }
 
+    /**
+     * @return string
+     */
+    function __toString()
+    {
+        return json_encode(get_object_vars($this));
+    }
+
+
 } 

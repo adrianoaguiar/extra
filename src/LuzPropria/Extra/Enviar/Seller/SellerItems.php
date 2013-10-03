@@ -11,12 +11,17 @@
 namespace LuzPropria\Extra\Enviar\Seller;
 
 
+use Guzzle\Http\Client;
+use Guzzle\Http\Exception\ClientErrorResponseException;
+use LuzPropria\Extra\Api\Seller\Response\SellerCreate;
 use LuzPropria\Extra\Autenticacao\Autenticacao;
 use LuzPropria\Extra\Enviar\Exception\ExceptionAutenticacao;
+use LuzPropria\Extra\Enviar\Exception\NotCreateException;
+use LuzPropria\Extra\Enviar\Exception\ResultInvalidException;
 use LuzPropria\Extra\Enviar\Interfaces\ClassSendInterface;
 use LuzPropria\Extra\Utils\Interfaces\Method;
 
-class SellerItem implements ClassSendInterface {
+class SellerItems implements ClassSendInterface {
 
     /**
      * @var \LuzPropria\Extra\Api\Seller\SellerItems
@@ -29,7 +34,7 @@ class SellerItem implements ClassSendInterface {
     private $_auth;
 
     /**
-     * @var
+     * @var \Guzzle\Http\Message\Response
      */
     private $_response;
 
@@ -70,11 +75,14 @@ class SellerItem implements ClassSendInterface {
      */
     public function isValid()
     {
-        return strlen($this->_class->getSkuId()) > 0
-            && is_double($this->_class->getDefaultPrice())
-            && is_double($this->_class->getSalePrice())
-            && is_int($this->_class->getAvailableQuantity())
-            && is_int($this->_class->getTotalQuantity())
+        /** @var \LuzPropria\Extra\Api\Seller\SellerItem $selleritem */
+        $selleritem = $this->_class->getSellerItem();
+        return strlen($selleritem->getSkuId()) > 0
+            && strlen($selleritem->getSkuOrigin()) > 0
+            && is_double($selleritem->getDefaultPrice())
+            && is_double($selleritem->getSalePrice())
+            && is_int($selleritem->getAvailableQuantity())
+            && is_int($selleritem->getTotalQuantity())
         ;
     }
 
@@ -83,18 +91,44 @@ class SellerItem implements ClassSendInterface {
      */
     public function send()
     {
-        if($this->_class->method() === 'GET') {
+        if($this->_class->method() === 'POST') {
+            $client = new Client($this->getAutentication()->getEnvironment(), array(
+                'request.options' => array(
+                    'headers' => array(
+                        'nova-app-token' => $this->getAutentication()->getAppToken(),
+                        'nova-auth-token' => $this->getAutentication()->getAuthToken(),
+                    )
+                )
+            ));
+            /** @var \Guzzle\Http\Message\EntityEnclosingRequest $request */
+            $request = $client->post(sprintf('sellerItems'));
+            $request->setBody(sprintf('%s', $this->_class->getSellerItem()), 'application/json');
+            /** @var \Guzzle\Http\Message\Response _response */
+            try {
+                $this->_response = $request->send();
+            } catch(ClientErrorResponseException $e) {
+                throw new NotCreateException(json_decode($e->getResponse()->getBody())->errorDesc);
+            }
 
         }
     }
 
     /**
-     * Retornar resultado
-     *
-     * @return mixed
+     * @return SellerCreate|mixed
+     * @throws \LuzPropria\Extra\Enviar\Exception\NotCreateException
+     * @throws \LuzPropria\Extra\Enviar\Exception\ResultInvalidException
      */
     public function result()
     {
-        // TODO: Implement result() method.
+        if($this->_response->getStatusCode() !== 201) {
+            throw new NotCreateException($this->_response->getBody());
+        }
+        $array_collection = json_decode($this->_response->getBody(), true);
+        if(!is_array($array_collection)) {
+            throw new ResultInvalidException('invalid return');
+        }
+        $seller_create = new SellerCreate();
+        $seller_create->setArray($array_collection);
+        return $seller_create;
     }
 }

@@ -11,6 +11,6 @@
 namespace LuzPropria\Extra\Enviar\Exception;
 
 
-class NotUpdateException {
+class NotUpdateException extends Exception {
 
 } 

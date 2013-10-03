@@ -12,4 +12,8 @@ namespace LuzPropria\Extra\Enviar\Exception;
 
 class Exception extends \Exception {
 
+    function __construct($message = "", $code = 0, Exception $previous = null)
+    {
+        parent::__construct(utf8_decode(utf8_decode($message)), $code, $previous);
+    }
 } 

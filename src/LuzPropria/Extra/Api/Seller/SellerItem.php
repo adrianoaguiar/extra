@@ -82,6 +82,12 @@ class SellerItem {
      */
     private $crossDockingTime;
 
+    public function __construct()
+    {
+        $this->setSkuOrigin('');
+        $this->setInstallmentId('');
+        $this->setCrossDockingTime(0);
+    }
     /**
      * @param $defaultPrice
      * @return $this
@@ -115,8 +121,7 @@ class SellerItem {
      */
     public function getInstallmentId()
     {
-        //return $this->installmentId;
-        return '';
+        return $this->installmentId ?: '';
     }
 
     /**
@@ -228,4 +233,31 @@ class SellerItem {
     }
 
 
-} 
+    public function setArray(Array $array_collection) 
+    {
+        if(array_key_exists('skuOrigin', $array_collection))
+            $this->setSkuOrigin($array_collection['skuOrigin']);
+        if(array_key_exists('skuId', $array_collection))
+            $this->setSkuId($array_collection['skuId']);
+        if(array_key_exists('defaultPrice', $array_collection))
+            $this->setDefaultPrice($array_collection['defaultPrice']);
+        if(array_key_exists('salePrice', $array_collection))
+            $this->setSalePrice($array_collection['salePrice']);
+        if(array_key_exists('availableQuantity', $array_collection))
+            $this->setAvailableQuantity($array_collection['availableQuantity']);
+        if(array_key_exists('installmentId', $array_collection))
+            $this->setInstallmentId($array_collection['installmentId']);
+        if(array_key_exists('totalQuantity', $array_collection))
+            $this->setTotalQuantity($array_collection['totalQuantity']);
+        if(array_key_exists('crossDockingTime', $array_collection))
+            $this->setCrossDockingTime($array_collection['crossDockingTime']);
+    }
+
+    /**
+     * @return string
+     */
+    function __toString()
+    {
+        return json_encode(get_object_vars($this));
+    }
+}

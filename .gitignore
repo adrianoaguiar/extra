@@ -5,3 +5,4 @@ composer-test.lock
 vendor/
 .idea/
 preview.html
+index.php

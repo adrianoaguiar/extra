@@ -154,5 +154,99 @@ try {
 }
 ```
 
+###### Serviço utilizado para registrar Itens do Lojista que já estão disponíveis para venda. ######
+```php
+use LuzPropria\Extra\Api\Seller\SellerItem;
+use LuzPropria\Extra\Api\Seller\SellerItems;
+use LuzPropria\Extra\Api\Seller\Response\SellerCreate;
+use LuzPropria\Extra\Enviar\Exception\NotUpdateException;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException
 
-[`LuzPropria`](http://www.luzpropria.com).
+$SellerItem = new SellerItem();
+$SellerItem
+    ->setSkuId(10) // SKU ID do produto do Lojista `Opcional`
+    ->setSkuOrigin('1') // SKU ID do produto no Marketplace
+    ->setDefaultPrice(11.10) // Preço “de” no Marketplace
+    ->setSalePrice(11.10) // Preço “por”. Preço real de venda
+    ->setAvailableQuantity(5) // Quantidade disponível para venda
+    ->setTotalQuantity(8) // Quantidade disponível em estoque
+    ->setCrossDockingTime(1) // Tempo de fabricação `Opcional`
+;
+
+$class = new SellerItems();
+$class->setSellerItem($SellerItem); // Ítem do Lojista
+
+try {
+    /** @var SellerCreate $retorno */
+    $retorno = $extra->send($class);
+
+
+} catch (NotUpdateException $e ) {
+    $e->getMessage();
+} catch (LPException $e ) {
+    $e->getMessage();
+}
+```
+
+###### Serviço de atualização de preços. ######
+Atualiza o preço ´de´ e o preço ´por´ (preço real para venda) do Item do Lojista informado.
+
+```php
+use LuzPropria\Extra\Api\Seller\PriceUpdate;
+use LuzPropria\Extra\Api\Seller\SellerItemsPrices;
+use LuzPropria\Extra\Enviar\Exception\NotUpdateException;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+
+$priceUpdate = new PriceUpdate();
+$priceUpdate
+    ->setDefaultPrice(20.90) // Preço ´de´
+    ->setSalePrice(20.00) // Preço ´por´
+;
+$class = new SellerItemsPrices();
+$class
+    ->setSkuId(21956924) // SKU ID do produto no Marketplace.
+    ->setPriceUpdate($priceUpdate) // Objeto priceUpdate.
+;
+
+try {
+
+    $extra->send($class);
+
+} catch (NotUpdateException $e ) {
+    $e->getMessage();
+} catch (LPException $e ) {
+    $e->getMessage();
+}
+```
+
+###### Atualiza a quantidade disponível para venda do Item do Lojista informado. ######
+
+```php
+use LuzPropria\Extra\Api\Seller\StockUpdate;
+use LuzPropria\Extra\Api\Seller\SellerItemsStock;
+use LuzPropria\Extra\Enviar\Exception\NotUpdateException;
+use LuzPropria\Extra\Enviar\Exception\Exception as LPException
+
+$stockUpdate = new StockUpdate();
+$stockUpdate
+    ->setAvailableQuantity(2) // Quantidade disponível para venda
+    ->setTotalQuantity(4) // Quantidade disponível em estoque
+;
+$class = new SellerItemsStock();
+$class
+    ->setSkuId(21956924) // SKU ID do produto no Marketplace.
+    ->setStockUpdate($priceUpdate) // Objeto stockUpdate.
+;
+
+try {
+
+    $extra->send($class);
+
+} catch (NotUpdateException $e ) {
+    $e->getMessage();
+} catch (LPException $e ) {
+    $e->getMessage();
+}
+```
+
+Desenvolvimento Rogério Adriano - [`LuzPropria`](http://www.luzpropria.com).

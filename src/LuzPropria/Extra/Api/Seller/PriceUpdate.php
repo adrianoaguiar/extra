@@ -99,4 +99,11 @@ class PriceUpdate {
     }
 
 
-} 
+    /**
+     * @return string
+     */
+    function __toString()
+    {
+        return json_encode(get_object_vars($this));
+    }
+}
