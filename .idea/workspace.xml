@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e50cb5e7-d7c4-4456-8b5e-8ba0cc37bad2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="www.extra.dev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,7 +57,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="104" selection-start="375" selection-end="375" vertical-scroll-proportion="0.22300886" vertical-offset="0" max-vertical-offset="4752">
+            <state line="6" column="4" selection-start="268" selection-end="268" vertical-scroll-proportion="0.19115044" vertical-offset="0" max-vertical-offset="4716">
               <folding />
             </state>
           </provider>
@@ -647,7 +645,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="104" selection-start="375" selection-end="375" vertical-scroll-proportion="0.22300886" vertical-offset="0" max-vertical-offset="4752">
+        <state line="6" column="4" selection-start="268" selection-end="268" vertical-scroll-proportion="0.19115044" vertical-offset="0" max-vertical-offset="4716">
           <folding />
         </state>
       </provider>
